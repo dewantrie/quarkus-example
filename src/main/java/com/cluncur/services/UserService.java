@@ -2,7 +2,6 @@ package com.cluncur.services;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
-import javax.inject.Singleton;
 
 import com.cluncur.data.usecases.CreateUserImpl;
 import com.cluncur.domain.dto.CreateUserDTO;

@@ -1,6 +1,8 @@
 package com.cluncur.presentation;
 
 import javax.inject.Inject;
+import javax.validation.ConstraintViolationException;
+import javax.validation.Valid;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
@@ -20,7 +22,11 @@ public class UserResource {
     UserService userService;
 
     @POST
-    public User save(@RequestBody CreateUserDTO user) {
-        return userService.save(user);
+    public User save(@RequestBody @Valid CreateUserDTO user) {
+        try {
+            return userService.save(user);
+        } catch (ConstraintViolationException e) {
+            throw new RuntimeException(e); 
+        }
     }
 }
