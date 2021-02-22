@@ -4,6 +4,16 @@ This project uses Quarkus, the Supersonic Subatomic Java Framework.
 
 If you want to learn more about Quarkus, please visit its website: https://quarkus.io/ .
 
+## Starting Vault
+Let’s start Vault in development mode:
+```
+docker run -t --cap-add=IPC_LOCK -e VAULT_ADDR=http://localhost:8200 -p 8200:8200 -d --name=dev-vault vault
+docker logs dev-vault
+docker exec -it dev-vault sh
+export VAULT_TOKEN=<token>
+vault kv put secret/kv/apps/config key=value
+```
+
 ## Running the application in dev mode
 
 You can run your application in dev mode that enables live coding using:
