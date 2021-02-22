@@ -20,7 +20,7 @@ public class UserResource {
     UserService userService;
 
     @POST
-    public User handle(@RequestBody CreateUserDTO user) {
-        return userService.handle(user);
+    public User save(@RequestBody CreateUserDTO user) {
+        return userService.save(user);
     }
 }

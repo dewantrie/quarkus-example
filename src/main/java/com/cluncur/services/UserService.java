@@ -15,7 +15,7 @@ public class UserService {
     @Inject
     UserRepositoryImpl userRepositoryImpl;
 
-    public User handle(CreateUserDTO user) {
+    public User save(CreateUserDTO user) {
         var createUser = new CreateUserImpl(userRepositoryImpl);
         return createUser.create(user);
     }

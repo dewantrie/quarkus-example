@@ -12,13 +12,13 @@ public class CreateUserImpl implements CreateUser {
         this.userRepository = userRepository;
     }
 
-	@Override
-	public User create(CreateUserDTO user) {
+    @Override
+    public User create(CreateUserDTO user) {
         var temp = this.userRepository.findByEmail(user.getEmail());
         if (temp != null) {
             throw new RuntimeException("Email exists");
-        }        
-		return this.userRepository.create(user);
-	}
-    
+        }
+        return this.userRepository.create(user);
+    }
+
 }
