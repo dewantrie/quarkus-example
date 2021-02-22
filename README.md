@@ -53,7 +53,7 @@ If you want to learn more about building native executables, please consult http
 ## Exposing Metrics
 You want to proactively check the current status of a service in production by exposing service metrics in order to detect any misbehavior as quickly as possible.
 ```
-./mvnw quarkus:add-extension -Dextensions="quarkus-smallrye-metrics
+./mvnw quarkus:add-extension -Dextensions="quarkus-smallrye-metrics"
 curl --header "Accept:application/json" localhost:8080/metrics
 ```
 
