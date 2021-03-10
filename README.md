@@ -13,7 +13,7 @@ docker exec -it dev-vault sh
 export VAULT_TOKEN=<token>
 vault secrets enable -version=2 kv2
 vault kv enable-versioning secret/
-vault kv put secret/kv/apps/config key=value
+vault kv put secret/kv2/apps/config key=value
 ```
 
 ## Running the application in dev mode
