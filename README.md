@@ -11,6 +11,8 @@ docker run -t --cap-add=IPC_LOCK -e VAULT_ADDR=http://localhost:8200 -p 8200:820
 docker logs dev-vault
 docker exec -it dev-vault sh
 export VAULT_TOKEN=<token>
+vault secrets enable -version=2 kv2
+vault kv enable-versioning secret/
 vault kv put secret/kv/apps/config key=value
 ```
 
